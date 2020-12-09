@@ -11,6 +11,43 @@
         <title>Gabriel Cramer</title>
 
         <link rel="stylesheet" href="styles/main.min.css">
+
+        <script>
+            const THEMES = {
+                DARK: 'dark',
+                LIGHT: 'light'
+            }
+
+            const setTheme = (prefersDarkScheme, theme) => {
+                if (prefersDarkScheme) {
+                    if (theme === THEMES.DARK) {
+                        document.body.classList.remove(THEMES.LIGHT)
+                    } else {
+                        document.body.classList.add(THEMES.LIGHT)
+                    }
+                } else {
+                    if (theme === THEMES.DARK) {
+                        document.body.classList.add(THEMES.DARK)
+                    } else {
+                        document.body.classList.remove(THEMES.DARK)
+                    }
+                }
+            }
+
+            window.onload = () => {
+                const toggle = document.querySelector('.theme-toggle');
+                const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+                if (prefersDarkScheme) {
+                    toggle.querySelector('input').checked = true;
+                }
+
+                toggle.classList.add('visible')
+
+                toggle.addEventListener('change', (event) =>
+                    setTheme(prefersDarkScheme, (event.target.checked) ? THEMES.DARK : THEMES.LIGHT));
+            }
+        </script>
     </head>
 
     <body>
@@ -26,6 +63,12 @@
                 <li><a href="mailto:cramergabriel@gmail.com" target="_blank" class="yellow">Mail</a></li>
                 <li><a href="resume.pdf" target="_blank" class="orange">Resume</a></li>
             </ul>
+
+            <label class="theme-toggle">
+                <input type="checkbox"/>
+                <div class="peg"></div>
+                <div class="bg"></div>
+            </label>
         </footer>
     </body>
 </html>
