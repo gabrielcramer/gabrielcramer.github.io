@@ -1,74 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
 
-        <meta name="author" content="Gabriel Cramer <cramergabriel@gmail.com>">
-        <meta name="description" content="Gabriel Cramer - Full-stack Developer">
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <head>
 
-        <title>Gabriel Cramer</title>
+    <meta charset="utf-8">
 
-        <link rel="stylesheet" href="styles/main.min.css">
+    <meta name="author" content="Gabriel Cramer <cramerdevelopmentsrl@gmail.com>">
+    <meta name="description" content="Full Stack Human Being">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <script>
-            const THEMES = {
-                DARK: 'dark',
-                LIGHT: 'light'
-            }
+    <title>
+      Gabriel &ndash; Full Stack Human Being & Creative Developer
+    </title>
 
-            const setTheme = (prefersDarkScheme, theme) => {
-                if (prefersDarkScheme) {
-                    if (theme === THEMES.DARK) {
-                        document.body.classList.remove(THEMES.LIGHT)
-                    } else {
-                        document.body.classList.add(THEMES.LIGHT)
-                    }
-                } else {
-                    if (theme === THEMES.DARK) {
-                        document.body.classList.add(THEMES.DARK)
-                    } else {
-                        document.body.classList.remove(THEMES.DARK)
-                    }
-                }
-            }
+    <link rel="stylesheet" href="//unpkg.com/sanitize.css@9.0.0/sanitize.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.min.css">
 
-            window.onload = () => {
-                const toggle = document.querySelector('.theme-toggle');
-                const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  </head>
 
-                if (prefersDarkScheme) {
-                    toggle.querySelector('input').checked = true;
-                }
+  <body>
 
-                toggle.classList.add('visible')
+    <div id="app">
 
-                toggle.addEventListener('change', (event) =>
-                    setTheme(prefersDarkScheme, (event.target.checked) ? THEMES.DARK : THEMES.LIGHT));
-            }
-        </script>
-    </head>
+      <a id="logo" href="/">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100px" height="100px" viewBox="0 0 100 100" version="1.1">
+          <path d="M 30.703125 8.574219 L 14.257812 12.597656 L 14.296875 50 L 14.355469 87.402344 L 30.703125 91.386719 C 39.707031 93.59375 47.109375 95.332031 47.167969 95.273438 C 47.226562 95.234375 47.246094 74.785156 47.226562 49.882812 L 47.167969 4.570312 Z M 30.703125 8.574219 "/>
+          <path d="M 51.367188 50 L 51.367188 95.46875 L 52.011719 95.3125 C 52.34375 95.214844 59.765625 93.417969 68.457031 91.308594 C 77.167969 89.199219 84.609375 87.402344 85.019531 87.285156 L 85.742188 87.089844 L 85.742188 44.199219 L 84.238281 44.082031 C 83.398438 44.003906 81.015625 43.886719 78.964844 43.828125 L 75.195312 43.691406 L 75.195312 59.882812 C 75.195312 77.558594 75.253906 76.660156 74.082031 77.109375 C 73.242188 77.441406 67.871094 78.164062 67.324219 78.027344 C 67.050781 77.949219 66.621094 77.675781 66.367188 77.402344 L 65.917969 76.914062 L 65.878906 50.234375 C 65.839844 29.277344 65.878906 23.4375 66.074219 23.066406 C 66.191406 22.8125 66.5625 22.421875 66.855469 22.1875 L 67.402344 21.777344 L 76.035156 23.027344 C 80.78125 23.710938 84.902344 24.316406 85.214844 24.355469 L 85.742188 24.472656 L 85.703125 18.632812 L 85.644531 12.8125 L 70.507812 9.160156 C 62.1875 7.128906 54.472656 5.273438 53.378906 5.019531 L 51.367188 4.53125 Z M 51.367188 50 "/>  
+        </svg>
+      </a>
 
-    <body>
-        <header>
-            <img src="images/profile.webp" alt="Gabriel Cramer" class="profile-image"/>
-            <h1>Gabriel Cramer</h1>
-        </header>
+      <div class="content">
+        <p>
+          Hello, I'm Gabriel Cramer,<br/>
+          a full stack human being and creative developer.<br/>
+          <a id="email" href="mailto:cramerdevelopmentsrl@gmail.com">Say hello</a> or check out <a id="resume" href="/resume.pdf" target="_blank">my resume</a>.<br/><br/>
+        </p>
+      </div>
 
-        <footer>
-            <ul>
-                <li><a href="https://github.com/gabrielcramer" target="_blank" class="purple">GitHub</a></li>
-                <li><a href="https://www.linkedin.com/in/gabrielcramer" target="_blank" class="green">LinkedIn</a></li>
-                <li><a href="mailto:cramergabriel@gmail.com" target="_blank" class="yellow">Mail</a></li>
-                <li><a href="resume.pdf" target="_blank" class="orange">Resume</a></li>
-            </ul>
+      <div id="cursor">
+        <svg class="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100px" height="100px" viewBox="0 0 100 100" version="1.1">
+          <path d="M 30.703125 8.574219 L 14.257812 12.597656 L 14.296875 50 L 14.355469 87.402344 L 30.703125 91.386719 C 39.707031 93.59375 47.109375 95.332031 47.167969 95.273438 C 47.226562 95.234375 47.246094 74.785156 47.226562 49.882812 L 47.167969 4.570312 Z M 30.703125 8.574219 "/>
+          <path d="M 51.367188 50 L 51.367188 95.46875 L 52.011719 95.3125 C 52.34375 95.214844 59.765625 93.417969 68.457031 91.308594 C 77.167969 89.199219 84.609375 87.402344 85.019531 87.285156 L 85.742188 87.089844 L 85.742188 44.199219 L 84.238281 44.082031 C 83.398438 44.003906 81.015625 43.886719 78.964844 43.828125 L 75.195312 43.691406 L 75.195312 59.882812 C 75.195312 77.558594 75.253906 76.660156 74.082031 77.109375 C 73.242188 77.441406 67.871094 78.164062 67.324219 78.027344 C 67.050781 77.949219 66.621094 77.675781 66.367188 77.402344 L 65.917969 76.914062 L 65.878906 50.234375 C 65.839844 29.277344 65.878906 23.4375 66.074219 23.066406 C 66.191406 22.8125 66.5625 22.421875 66.855469 22.1875 L 67.402344 21.777344 L 76.035156 23.027344 C 80.78125 23.710938 84.902344 24.316406 85.214844 24.355469 L 85.742188 24.472656 L 85.703125 18.632812 L 85.644531 12.8125 L 70.507812 9.160156 C 62.1875 7.128906 54.472656 5.273438 53.378906 5.019531 L 51.367188 4.53125 Z M 51.367188 50 "/>  
+        </svg>
+      </div>
 
-            <label class="theme-toggle">
-                <input type="checkbox"/>
-                <div class="peg"></div>
-                <div class="bg"></div>
-            </label>
-        </footer>
-    </body>
+    </div>
+
+    <script src="js/app.min.js"></script>
+
+  </body>
+
 </html>
